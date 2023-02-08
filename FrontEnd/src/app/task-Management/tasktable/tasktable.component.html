@@ -1,0 +1,19 @@
+<mat-card-content class="table-container">
+    <table class="table table-bordered mt-2">
+        <thead>
+            <tr>
+                <th *ngFor="let item of taskFormField" >{{item.headerName != '' ? item.headerName : null}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item1 of gridRow">
+                <ng-container *ngFor="let item of taskFormField;index as i">
+                    <td *ngIf="item.field != 'view'"> {{ item1[item.field]}}</td>
+                    <td *ngIf="item.field == 'view'">
+                        <button [routerLink]="['/editTask',item1.id]">{{item.field}}</button>
+                    </td>
+                </ng-container>     
+            </tr>
+        </tbody>
+    </table>
+</mat-card-content>

@@ -1,0 +1,24 @@
+<div class="taskForm">
+    <ng-container *ngFor="let item1 of gridRow">
+        <form *ngIf="item1.id == userId">
+            <div class="form-outline mb-4">
+                <label class="form-label">{{ item1.label }}</label>
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label">Task Description:{{ item1.description }}</label>
+            </div>
+            <div class="form-outline mb-4">
+                <select>
+                  <option  selected  *ngFor="let option of storeGroupOption">{{option}}</option>
+                </select>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="date" placeholder="Start Date" size="20" name="name" value="{{ item1. maxStartDate}}"
+                    required>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="date" placeholder="End Date" size="20" name="name" required>
+            </div>
+        </form>
+    </ng-container>
+</div>
